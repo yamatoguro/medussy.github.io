@@ -1,0 +1,103 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(115deg, #000, #111, #292a2d 40% 59%, #111, #000);
+    color: #fff;
+    overflow: hidden;
+}
+
+body {
+    background-color: transparent;
+}
+
+a {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    text-decoration: none;
+    font-size: x-large;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.5rem;
+}
+
+.row {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.twitch {
+    background: linear-gradient(115deg, #ffffff4c, #eeeeee4c, #d6d5d2 45% 55%, #eeeeee4c, #ffffff4c);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 1vh;
+}
+
+.social ul {
+    list-style: none;
+
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+
+    justify-content: center;
+    text-align: left;
+
+    margin: auto;
+}
+
+.social li {
+    margin: .5rem;
+    text-align: center;
+    border-radius: 15px;
+    border: outset white 2px;
+    padding: 7.5px;
+}
+
+.social li:hover {
+    background-color: white;
+    color: black !important;
+    scale: 105%;
+    transition-duration: 50ms;
+}
+
+li:hover a {
+    color: inherit;
+}
+
+@font-face {
+    font-family: 'snicklesregular';
+    src: url('snickles-webfont.woff2') format('woff2'),
+        url('snickles-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (max-width: 800px) {
+    .twitch {
+        margin-top: 0;
+    }
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480) {
+    .twitch {
+        margin-top: 0;
+    }
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: auto;
+    }
+}

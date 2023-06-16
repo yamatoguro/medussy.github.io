@@ -1,28 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Medussy</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Medussy</title>
 </head>
 
 <body>
-  <img src="medusa.png" style="height: 100px;"/>
-  <div id="twitch-embed"></div>
 
-    <!-- Load the Twitch embed JavaScript file -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <div class="row">
+    <div class="twitch">
+      <div id="twitch-embed"></div>
+    </div>
 
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
-        channel: "dr4gonblitz",
-        // Only needed if this page is going to be embedded on other websites
-        parent: ["medussy.com"]
-      });
-    </script>
+    <div class="twitch">
+      <iframe src="https://www.twitch.tv/embed/dr4gonblitz/chat?parent=medussy.com" height="480" width="300">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="social">
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/@Dr4gonBlitz" target="_blank">
+            <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" width="35px"
+              style="vertical-align: text-top;">
+            Main YouTube Channel
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.twitch.tv/dr4gonblitz" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/cd78b7b1-ed08-42ec-9708-2bc152fb2c86.png" width="35px"
+              style="vertical-align: text-top;">
+            Twitch Channel
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.patreon.com/Dr4gonBlitz" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/e98a2c7b-7210-43c3-a22a-a564e1400b71.PNG" width="35px"
+              style="vertical-align: text-top;">
+            Patreon
+          </a>
+        </li>
+
+        <li>
+          <a href="https://discord.gg/p2pgCHW" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/6b7c83d4-b111-4e84-8272-fa0c28f7d308.PNG" width="35px"
+              style="vertical-align: text-top;">
+            Discord Server
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="social">
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/@Dr4gonBlitzDaily" target="_blank">
+            <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" width="35px"
+              style="vertical-align: text-top;">
+            2nd YouTube Channel
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/dr4gonblitz" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/5aa4d339-1a19-404a-9c20-de3c01ff2f31.PNG" width="35px"
+              style="vertical-align: text-top;">
+            Instagram Channel
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.twitter.com/dr4gonblitz" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/59daa582-19b3-4057-a996-3afc4ee67c2d.PNG" width="35px"
+              style="vertical-align: text-top;">
+            Twitter
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.tiktok.com/@dr4gonblitz1" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/b356fe24-5bdc-41e7-9ce1-435b644a41ff.PNG" width="35px"
+              style="vertical-align: text-top;">
+            TikTok Channel
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Load the Twitch embed JavaScript file -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+  <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+  <script type="text/javascript">
+    new Twitch.Embed("twitch-embed", {
+      width: 854,
+      height: 480,
+      layout: "video",
+      channel: "dr4gonblitz",
+      parent: ["medussy.com"]
+    });
+  </script>
 </body>
 
 </html>
