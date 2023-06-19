@@ -15,15 +15,17 @@
 
   <div class="row">
     <div class="container">
-      <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
 
       <div id="twitch" class="hide">
       </div>
-      <iframe id="youtube" class="hide" width="854" height="480" src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=dr4gonblitz" frameborder="0" allowfullscreen></iframe> 
+      <iframe id="youtube" class="hide" width="1280" height="720"
+        src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=dr4gonblitz"
+        frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="container hide" id="chat">
-      <iframe src="https://www.twitch.tv/embed/dr4gonblitz/chat?parent=medussy.com&darkpopout" height="480" width="300">
+      <iframe src="https://www.twitch.tv/embed/dr4gonblitz/chat?parent=medussy.com&darkpopout" height="720" width="400">
       </iframe>
     </div>
   </div>
@@ -46,12 +48,15 @@
             Twitch Channel
           </a>
         </li>
-
+      </ul>
+    </div>
+    <div class="social">
+      <ul>
         <li>
-          <a href="https://www.patreon.com/Dr4gonBlitz" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/e98a2c7b-7210-43c3-a22a-a564e1400b71.PNG" width="35px"
+          <a href="https://www.youtube.com/@Dr4gonBlitzDaily" target="_blank">
+            <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" width="35px"
               style="vertical-align: text-top;">
-            Patreon
+            2nd YouTube Channel
           </a>
         </li>
 
@@ -67,10 +72,10 @@
     <div class="social">
       <ul>
         <li>
-          <a href="https://www.youtube.com/@Dr4gonBlitzDaily" target="_blank">
-            <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" width="35px"
+          <a href="https://www.patreon.com/Dr4gonBlitz" target="_blank">
+            <img src="https://emoji.discadia.com/emojis/e98a2c7b-7210-43c3-a22a-a564e1400b71.PNG" width="35px"
               style="vertical-align: text-top;">
-            2nd YouTube Channel
+            Patreon
           </a>
         </li>
 
@@ -81,7 +86,10 @@
             Instagram Channel
           </a>
         </li>
-
+      </ul>
+    </div>
+    <div class="social">
+      <ul>
         <li>
           <a href="https://www.twitter.com/dr4gonblitz" target="_blank">
             <img src="https://emoji.discadia.com/emojis/59daa582-19b3-4057-a996-3afc4ee67c2d.PNG" width="35px"
@@ -118,8 +126,8 @@
   <script type="text/javascript">
     var options = {
       channel: "dr4gonblitz", // TODO: Change this to the streams username you want to embed
-      width: 854,
-      height: 480,
+      width: 1280,
+      height: 720,
     };
     var player = new Twitch.Player("twitch", options);
 
