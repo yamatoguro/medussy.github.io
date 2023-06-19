@@ -31,7 +31,7 @@ h1 {
     margin: auto;
 }
 
-.twitch {
+.container {
     background: linear-gradient(115deg, #ffffff4c, #eeeeee4c, #d6d5d2 45% 55%, #eeeeee4c, #ffffff4c);
     border-radius: 10px;
     padding: 20px;
@@ -68,6 +68,10 @@ h1 {
 
 li:hover a {
     color: inherit;
+}
+
+.hide {
+    display: none;
 }
 
 @font-face {

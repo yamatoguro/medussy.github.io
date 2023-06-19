@@ -14,11 +14,15 @@
 <body>
 
   <div class="row">
-    <div class="twitch">
-      <div id="twitch-embed"></div>
+    <div class="container">
+      <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+
+      <div id="twitch" class="hide">
+      </div>
+      <iframe id="youtube" class="hide" width="854" height="480" src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=dr4gonblitz" frameborder="0" allowfullscreen></iframe> 
     </div>
 
-    <div class="twitch">
+    <div class="container hide" id="chat">
       <iframe src="https://www.twitch.tv/embed/dr4gonblitz/chat?parent=medussy.com&darkpopout" height="480" width="300">
       </iframe>
     </div>
@@ -98,10 +102,10 @@
   </div>
 
   <!-- Load the Twitch embed JavaScript file -->
-  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <!-- <script src="https://embed.twitch.tv/embed/v1.js"></script> -->
 
   <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     new Twitch.Embed("twitch-embed", {
       width: 854,
       height: 480,
@@ -109,6 +113,40 @@
       channel: "dr4gonblitz",
       parent: ["medussy.com"]
     });
+  </script> -->
+
+  <script type="text/javascript">
+    var options = {
+      channel: "dr4gonblitz", // TODO: Change this to the streams username you want to embed
+      width: 854,
+      height: 480,
+    };
+    var player = new Twitch.Player("twitch", options);
+
+    player.addEventListener(Twitch.Player.READY, initiate)
+
+    function initiate() {
+      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      player.removeEventListener(Twitch.Player.READY, initiate);
+    }
+
+    function handleOnline() {
+      document.getElementById("twitch").classList.remove('hide');
+      document.getElementById("chat").classList.remove('hide');
+      player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      player.setMuted(false);
+    }
+
+    function handleOffline() {
+      document.getElementById("twitch").classList.add('hide');
+      document.getElementById("chat").classList.add('hide');
+      document.getElementById("youtube").classList.remove('hide');
+      player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      player.setMuted(true);
+    }
   </script>
 </body>
 
