@@ -19,7 +19,7 @@
 
       <div id="twitch" class="hide">
       </div>
-      <iframe width="1280" height="720" class="hide"
+      <iframe width="1280" height="720" class="hide" id="youtube"
         src="https://www.youtube.com/embed/videoseries?list=PLOyMVf6KuedLq-71_1u-y0UxEulaacpEV"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -159,6 +159,7 @@
     function handleOnline() {
       document.getElementById("twitch").classList.remove('hide');
       document.getElementById("chat").classList.remove('hide');
+      document.getElementById("youtube").classList.add('hide');
       player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
       player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
       player.setMuted(false);
