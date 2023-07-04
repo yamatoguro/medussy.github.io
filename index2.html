@@ -119,9 +119,9 @@
     // JavaScript code
     window.addEventListener('DOMContentLoaded', () => {
       const clientId = 'bndubk9ors3hsx8ff3yrq9d05zzvnu';
-      const channelName = 'dr4gonblitz';
+      const channelName = 'yamatoguro';
 
-      fetch(`https://api.twitch.tv/helix/streams?user_login=${channelName}`, {
+      fetch(`https://api.twitch.tv/Medussy/streams?user_login=${channelName}`, {
           headers: {
             'Client-ID': clientId
           }
@@ -137,7 +137,7 @@
             videoPlayer.innerHTML =
               `<iframe src="https://player.twitch.tv/?channel=${channelName}" frameborder="0" allowfullscreen></iframe>`;
           } else {
-            fetch(`https://api.twitch.tv/helix/users?login=${channelName}`, {
+            fetch(`https://api.twitch.tv/Medussy/users?login=${channelName}`, {
                 headers: {
                   'Client-ID': clientId
                 }
@@ -145,7 +145,7 @@
               .then(response => response.json())
               .then(data => {
                 const userId = data.data[0].id;
-                fetch(`https://api.twitch.tv/helix/users/follows?to_id=${userId}`, {
+                fetch(`https://api.twitch.tv/Medussy/users/follows?to_id=${userId}`, {
                     headers: {
                       'Client-ID': clientId
                     }
