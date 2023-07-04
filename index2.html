@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://apis.google.com/js/platform.js"></script>
+
+  <title>Medussy</title>
+  <style>
+    /* CSS styles */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1c1c1c;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .follower-count {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .video-player {
+      margin: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 480px;
+    }
+
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+
+    .video-player {
+      width: 100%;
+      height: 500px;
+    } */
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h1 class="title">Loading...</h1>
+    <div class="follower-count">Followers on Twitch: Loading...</div>
+    <div class="icons">
+      <a class="icon g-ytsubscribe" data-channel="Dr4gonBlitz" data-layout="full" data-theme="dark"
+        data-count="default">
+      </a>
+      <a class="icon g-ytsubscribe" data-channelid="UC2troYPxmzO5qGaDUNVTc8Q" data-theme="dark" data-layout="full"
+        data-count="default">
+      </a>
+      <a href="#"><img class="icon" src="https://emoji.discadia.com/emojis/cd78b7b1-ed08-42ec-9708-2bc152fb2c86.png"
+          alt="Icon 2"></a>
+      <a href="#"><img class="icon" src="https://emoji.discadia.com/emojis/6b7c83d4-b111-4e84-8272-fa0c28f7d308.PNG"
+          alt="Icon 4"></a>
+      <a href="#"><img class="icon" src="https://emoji.discadia.com/emojis/e98a2c7b-7210-43c3-a22a-a564e1400b71.PNG"
+          alt="Icon 5"></a>
+      <a href="#"><img class="icon" src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg"
+          alt="PayPal"></a>
+      <a href="#"><img class="icon" src="https://emoji.discadia.com/emojis/59daa582-19b3-4057-a996-3afc4ee67c2d.PNG"
+          alt="Icon 7"></a>
+      <a href="#"><img class="icon" src="https://emoji.discadia.com/emojis/b356fe24-5bdc-41e7-9ce1-435b644a41ff.PNG"
+          alt="Icon 8"></a>
+      <a href="#"><img class="icon" src="https://emoji.discadia.com/emojis/5aa4d339-1a19-404a-9c20-de3c01ff2f31.PNG"
+          alt="Icon 9"></a>
+    </div>
+  </nav>
+
+  <div class="video-player">
+    <iframe src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    // JavaScript code
+    window.addEventListener('DOMContentLoaded', () => {
+      const clientId = 'bndubk9ors3hsx8ff3yrq9d05zzvnu';
+      const channelName = 'dr4gonblitz';
+
+      fetch(`https://api.twitch.tv/helix/streams?user_login=${channelName}`, {
+          headers: {
+            'Client-ID': clientId
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.data.length > 0) {
+            const streamTitle = data.data[0].title;
+            const followerCount = data.data[0].viewer_count;
+            document.querySelector('.title').textContent = streamTitle;
+            document.querySelector('.follower-count').textContent = `Seguidores: ${followerCount}`;
+            const videoPlayer = document.querySelector('.video-player');
+            videoPlayer.innerHTML =
+              `<iframe src="https://player.twitch.tv/?channel=${channelName}" frameborder="0" allowfullscreen></iframe>`;
+          } else {
+            fetch(`https://api.twitch.tv/helix/users?login=${channelName}`, {
+                headers: {
+                  'Client-ID': clientId
+                }
+              })
+              .then(response => response.json())
+              .then(data => {
+                const userId = data.data[0].id;
+                fetch(`https://api.twitch.tv/helix/users/follows?to_id=${userId}`, {
+                    headers: {
+                      'Client-ID': clientId
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    const followerCount = data.total;
+                    document.querySelector('.follower-count').textContent = `Seguidores: ${followerCount}`;
+                  })
+                  .catch(error => {
+                    console.error(error);
+                    document.querySelector('.follower-count').textContent = 'Erro ao obter os seguidores';
+                  });
+              })
+              .catch(error => {
+                console.error(error);
+                document.querySelector('.follower-count').textContent = 'Erro ao obter os seguidores';
+              });
+
+            fetch(
+                'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLOyMVf6KuedLq-71_1u-y0UxEulaacpEV&part=snippet&key=AIzaSyAhFMecth7R0JKINSkm2z6o4wf0ArC1gCg'
+              )
+              .then(response => response.json())
+              .then(data => {
+                const videoTitle = data.items[0].snippet.title;
+                document.querySelector('.title').textContent = videoTitle;
+                const videoPlayer = document.querySelector('.video-player');
+                videoPlayer.innerHTML =
+                  '<iframe src="https://www.youtube.com/embed/videoseries?list=PLOyMVf6KuedLq-71_1u-y0UxEulaacpEV" frameborder="0" allowfullscreen></iframe>';
+              })
+              .catch(error => {
+                console.error(error);
+                document.querySelector('.title').textContent = 'Error';
+              });
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          document.querySelector('.title').textContent = 'Error';
+        });
+    });
+  </script>
+</body>
+
+</html>
