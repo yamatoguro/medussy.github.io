@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     coin.addEventListener('click', function () {
         coin.classList.add('flipping');
-        resultTextElement.textContent = 'Lançando...';
+        resultTextElement.textContent = 'Flipping...';
 
         setTimeout(function () {
             const flipResult = Math.random();
