@@ -2,185 +2,75 @@
 <html lang="en">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medussy</title>
   <link rel="shortcut icon" href="./db.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-
-  <title>Medussy</title>
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
 </head>
 
 <body>
+  <main class="wrapper">
+    <!-- Media Container -->
+    <section class="media-area">
+      <div id="twitch" class="media hide"></div>
 
-  <div class="row">
-    <div class="container">
-      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-
-      <div id="twitch" class="hide">
-      </div>
-      <iframe width="1280" height="720" class="hide" id="youtube"
+      <iframe id="youtube" class="media hide"
         src="https://www.youtube.com/embed/videoseries?list=PLOyMVf6KuedLq-71_1u-y0UxEulaacpEV"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
+        title="YouTube video player" allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
       </iframe>
-    </div>
 
-    <div class="container hide" id="chat">
-      <iframe src="https://www.twitch.tv/embed/dr4gonblitz/chat?parent=medussy.com&darkpopout" height="720" width="400">
+      <iframe id="chat" class="media chat hide"
+        src="https://www.twitch.tv/embed/dr4gonblitz/chat?parent=medussy.com&darkpopout">
       </iframe>
-    </div>
-  </div>
+    </section>
 
-  <div class="row">
-    <div class="social">
-      <ul>
-        <li>
-          <a href="https://www.youtube.com/@Dr4gonBlitz" target="_blank">
-            <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" width="35px"
-              style="vertical-align: text-top;">
-            Main YouTube Channel
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.twitch.tv/dr4gonblitz" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/cd78b7b1-ed08-42ec-9708-2bc152fb2c86.png" width="35px"
-              style="vertical-align: text-top;">
-            Twitch Channel
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="social">
-      <ul>
-        <li>
-          <a href="https://www.youtube.com/@Dr4gonBlitzDaily" target="_blank">
-            <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" width="35px"
-              style="vertical-align: text-top;">
-            2nd YouTube Channel
-          </a>
-        </li>
-
-        <li>
-          <a href="https://discord.gg/p2pgCHW" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/6b7c83d4-b111-4e84-8272-fa0c28f7d308.PNG" width="35px"
-              style="vertical-align: text-top;">
-            Discord Server
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="social">
-      <ul>
-        <li>
-          <a href="https://www.patreon.com/Dr4gonBlitz" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/e98a2c7b-7210-43c3-a22a-a564e1400b71.PNG" width="35px"
-              style="vertical-align: text-top;">
-            <a href="https://www.patreon.com/bePatron?u=44735463" data-patreon-widget-type="become-patron-button">Become
-              a
-              Patron!</a>
-            <script async src="https://c6.patreon.com/becomePatronButton.bundle.js%22%3E"></script>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://streamelements.com/dr4gonblitz/tip" target="_blank">
-            <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg" width="35px"
-              style="vertical-align: text-top;">
-            Donate
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="social">
-      <ul>
-        <li>
-          <a href="https://www.twitter.com/dr4gonblitz" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/59daa582-19b3-4057-a996-3afc4ee67c2d.PNG" width="35px"
-              style="vertical-align: text-top;">
-            Twitter
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.tiktok.com/@dr4gonblitz1" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/b356fe24-5bdc-41e7-9ce1-435b644a41ff.PNG" width="35px"
-              style="vertical-align: text-top;">
-            TikTok Channel
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="social">
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/dr4gonblitz" target="_blank">
-            <img src="https://emoji.discadia.com/emojis/5aa4d339-1a19-404a-9c20-de3c01ff2f31.PNG" width="35px"
-              style="vertical-align: text-top;">
-            Instagram Channel
-          </a>
-        </li>
-        <li>
-          <a href="https://tantrummerch.com/dr4gonblitz/" target="_blank">
-            <img src="./db.png" alt="Merch" width="35px"
-              style="vertical-align: text-top;">
-            Merch
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Load the Twitch embed JavaScript file -->
-  <!-- <script src="https://embed.twitch.tv/embed/v1.js"></script> -->
-
-  <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
-  <!-- <script type="text/javascript">
-    new Twitch.Embed("twitch-embed", {
-      width: 854,
-      height: 480,
-      layout: "video",
-      channel: "dr4gonblitz",
-      parent: ["medussy.com"]
-    });
-  </script> -->
-
-  <script type="text/javascript">
-    var options = {
-      channel: "dr4gonblitz", // TODO: Change this to the streams username you want to embed
-      width: 1280,
-      height: 720,
-    };
-    var player = new Twitch.Player("twitch", options);
-
-    player.addEventListener(Twitch.Player.READY, initiate)
-
-    function initiate() {
-      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      player.removeEventListener(Twitch.Player.READY, initiate);
-    }
-
-    function handleOnline() {
-      document.getElementById("twitch").classList.remove('hide');
-      document.getElementById("chat").classList.remove('hide');
-      document.getElementById("youtube").classList.add('hide');
-      player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      player.setMuted(false);
-    }
-
-    function handleOffline() {
-      document.getElementById("twitch").classList.add('hide');
-      document.getElementById("chat").classList.add('hide');
-      document.getElementById("youtube").classList.remove('hide');
-      player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      player.setMuted(true);
-    }
-  </script>
+    <!-- Social Links -->
+    <section class="social-links">
+      <div class="social-group">
+        <a class="social-btn" href="https://www.youtube.com/@Dr4gonBlitz" target="_blank">
+          <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" alt="YouTube"> Main Channel
+        </a>
+        <a class="social-btn" href="https://www.twitch.tv/dr4gonblitz" target="_blank">
+          <img src="https://emoji.discadia.com/emojis/cd78b7b1-ed08-42ec-9708-2bc152fb2c86.png" alt="Twitch"> Twitch
+          Channel
+        </a>
+        <a class="social-btn" href="https://www.youtube.com/@Dr4gonBlitzDaily" target="_blank">
+          <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" alt="YouTube 2nd"> 2nd Channel
+        </a>
+        <a class="social-btn" href="https://discord.gg/p2pgCHW" target="_blank">
+          <img src="https://emoji.discadia.com/emojis/6b7c83d4-b111-4e84-8272-fa0c28f7d308.PNG" alt="Discord"> Discord
+          Server
+        </a>
+        <a class="social-btn" href="https://www.patreon.com/bePatron?u=44735463" target="_blank"
+          data-patreon-widget-type="become-patron-button">
+          <img src="https://emoji.discadia.com/emojis/e98a2c7b-7210-43c3-a22a-a564e1400b71.PNG" alt="Patreon"> Become a
+          Patron!
+        </a>
+        <a class="social-btn" href="https://streamelements.com/dr4gonblitz/tip" target="_blank">
+          <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg" alt="Donate"> Donate
+        </a>
+        <a class="social-btn" href="https://twitter.com/dr4gonblitz" target="_blank">
+          <img src="https://emoji.discadia.com/emojis/59daa582-19b3-4057-a996-3afc4ee67c2d.PNG" alt="Twitter"> Twitter
+        </a>
+        <a class="social-btn" href="https://www.tiktok.com/@dr4gonblitz1" target="_blank">
+          <img src="https://emoji.discadia.com/emojis/b356fe24-5bdc-41e7-9ce1-435b644a41ff.PNG" alt="TikTok"> TikTok
+        </a>
+        <a class="social-btn" href="https://instagram.com/dr4gonblitz" target="_blank">
+          <img src="https://emoji.discadia.com/emojis/5aa4d339-1a19-404a-9c20-de3c01ff2f31.PNG" alt="Instagram">
+          Instagram
+        </a>
+        <a class="social-btn" href="https://tantrummerch.com/dr4gonblitz/" target="_blank">
+          <img src="./db.png" alt="Merch"> Merch
+        </a>
+      </div>
+    </section>
+  </main>
+  <script src="./js/browser.js"></script>
 </body>
 
 </html>
