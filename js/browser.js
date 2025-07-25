@@ -14,6 +14,7 @@ function handleOnline() {
     document.getElementById("twitch").classList.remove('hide');
     document.getElementById("chat").classList.remove('hide');
     document.getElementById("youtube").classList.add('hide');
+    document.getElementById("imageDB").classList.add('hide')
     player.setMuted(false);
 }
 
@@ -21,6 +22,7 @@ function handleOffline() {
     document.getElementById("twitch").classList.add('hide');
     document.getElementById("chat").classList.add('hide');
     document.getElementById("youtube").classList.remove('hide');
+    document.getElementById("imageDB").classList.remove('hide')
     player.setMuted(true);
 }
 // Coin Flip function
