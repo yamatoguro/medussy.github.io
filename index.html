@@ -12,29 +12,11 @@
   <script src="https://player.twitch.tv/js/embed/v1.js"></script>
 </head>
 
-  <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0f0f0;
-    }
+<style>
 
-    #runaway {
-      position: absolute;
-      padding: 12px 24px;
-      background-color: #ff5252;
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: top 0.2s, left 0.2s;
-    }
-  </style>
+
+</style>
+
 <body>
   <main class="wrapper">
     <!-- Media Container -->
@@ -99,66 +81,54 @@
               THE REAL LIST</a></button>
         </div>
       </div>
-  <button id="runaway">Click Me!</button>
     </section>
     <div id="coin">
       <img src="./images/360.png" alt="Coin face" />
       <p id="resultText"></p>
     </div>
+    <button id="runaway">THE TRUE LIST</button>
   </main>
   <script src="./js/browser.js"></script>
 </body>
 
 </head>
 
-  <script>
-    const button = document.getElementById('runaway');
+<script>
+  const button = document.getElementById('runaway');
 
-    function randomPosition() {
-      const buffer = 100;
-      const x = Math.random() * (window.innerWidth - buffer);
-      const y = Math.random() * (window.innerHeight - buffer);
-      button.style.left = `${x}px`;
-      button.style.top = `${y}px`;
-    }
+  function randomPosition() {
+    const buffer = 100;
+    const x = Math.random() * (window.innerWidth - buffer);
+    const y = Math.random() * (window.innerHeight - buffer);
+    button.style.left = `${x}px`;
+    button.style.top = `${y}px`;
+  }
 
-    function handleMouseMove(event) {
-      const rect = button.getBoundingClientRect();
-      const threshold = 100; // how close the mouse can get before it runs
+  function handleMouseMove(event) {
+    const rect = button.getBoundingClientRect();
+    const threshold = 100; // how close the mouse can get before it runs
 
-      const mouseNear =
-        Math.abs(event.clientX - rect.left - rect.width / 2) < threshold &&
-        Math.abs(event.clientY - rect.top - rect.height / 2) < threshold;
+    const mouseNear =
+      Math.abs(event.clientX - rect.left - rect.width / 2) < threshold &&
+      Math.abs(event.clientY - rect.top - rect.height / 2) < threshold;
 
-      if (mouseNear) randomPosition();
-    }
+    if (mouseNear) randomPosition();
+  }
 
-    document.addEventListener('mousemove', handleMouseMove);
-    randomPosition(); // start in a random spot
-  </script>
+  document.addEventListener('mousemove', handleMouseMove);
+  randomPosition(); // start in a random spot
+</script>
 <style>
-  .container {
-    text-align: center;
-  }
-
-  .container a {
-    text-decoration: none;
-  }
-
-  .hidden-button {
-    visibility: hidden;
-  }
-
-  .container:hover .hidden-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #282c34;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.6em 1em;
-    border-radius: 8px;
-    font-weight: 500;
-    visibility: visible;
+  #runaway {
+    position: absolute;
+    padding: 12px 24px;
+    background-color: #ff5252;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: top 0.2s, left 0.2s;
   }
 </style>
 
