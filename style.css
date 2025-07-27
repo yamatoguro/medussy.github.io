@@ -20,6 +20,10 @@ h1 {
     perspective: 1000px;
 }
 
+/* May be used for a loading prank in the future */
+body.waiting {
+    cursor: wait;
+}
 
 
 @keyframes coinFlip {
@@ -87,7 +91,8 @@ h1 {
     gap: 1.5rem;
     align-items: start;
 }
-.media-area img{
+
+.media-area img {
     width: 100px;
 }
 
@@ -97,10 +102,12 @@ h1 {
     background-color: #000;
     border-radius: 8px;
 }
-.chat{
-    height:100%;
+
+.chat {
+    height: 100%;
 }
-.chat img{
+
+.chat img {
     display: flex;
     width: 100%;
     image-rendering: pixelated;
@@ -113,12 +120,15 @@ h1 {
         grid-template-columns: 1fr;
         /* Stack vertically */
     }
-    .chat img{
+
+    .chat img {
         display: none;
     }
-    .chat{
+
+    .chat {
         height: 300px;
     }
+
     .media {
         aspect-ratio: auto;
     }
@@ -173,3 +183,26 @@ h1 {
     background-color: #444;
 }
 
+.container {
+    text-align: center;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.hidden-button {
+    visibility: hidden;
+}
+
+.container:hover .hidden-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #282c34;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    font-weight: 500;
+    visibility: visible;
+}
