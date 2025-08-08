@@ -18,6 +18,7 @@ h1 {
     height: 100px;
     cursor: pointer;
     perspective: 1000px;
+    
 }
 
 /* May be used for a loading prank in the future */
@@ -57,7 +58,7 @@ body.waiting {
 
 @font-face {
     font-family: customFont;
-    src: url(./fonts/SymphonyoftheNightfont.ttf);
+    src: url(../fonts/SymphonyoftheNightfont.ttf);
 }
 
 #resultText {
