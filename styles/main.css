@@ -70,6 +70,17 @@ body.waiting {
     font-family: customFont, sans-serif;
 }
 
+#scheduled-races{
+    margin: 0 1em;
+    font-family: customFont, sans-serif;
+    h2{
+        font-size: 35px;
+    }
+    ul{
+        font-size: 20px;
+    }
+}
+
 
 .wrapper {
     display: flex;
