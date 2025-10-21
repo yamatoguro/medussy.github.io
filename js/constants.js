@@ -5,5 +5,12 @@ window.races = [
       { display: "Renantrl", channel: "renantrl1" }
     ],
     estTime: "2025-10-21T18:00:00-04:00"
+  },
+  {
+    match: [
+      { display: "ClassicAdvent", channel: "classicadvent" },
+      { display: "Skr1mps", channel: "skr1mps" }
+    ],
+    estTime: "2025-10-22T20:30:00-04:00"
   }
 ];
