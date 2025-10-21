@@ -11,6 +11,6 @@ window.races = [
       { display: "ClassicAdvent", channel: "classicadvent" },
       { display: "Skr1mps", channel: "skr1mps" }
     ],
-    estTime: "2025-10-22T20:30:00-04:00"
+    estTime: "2025-10-22T18:00:00-04:00"
   }
 ];
