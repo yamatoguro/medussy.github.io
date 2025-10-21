@@ -1,28 +1,47 @@
-const races = [
-      { match: "Eldri7ch vs Renantrl", estTime: "2025-10-21T18:00:00-04:00" }
-    ];
+const options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  timeZoneName: 'short'
+};
 
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-      timeZoneName: 'short'
-    };
+const raceList = document.getElementById('race-list');
+const raceData = window.races || [];
+const now = new Date();
+let hasUpcomingOrLive = false;
 
-    const raceList = document.getElementById('race-list');
+if (raceData.length === 0) {
+  const li = document.createElement('li');
+  li.textContent = "No races scheduled at this time.";
+  raceList.appendChild(li);
+} else {
+  raceData.forEach(race => {
+    const raceTime = new Date(race.estTime);
+    const raceEnd = new Date(raceTime.getTime() + 4 * 60 * 60 * 1000); // 4 hours later
 
-    if (races.length === 0) {
+    if (now < raceEnd) {
+      hasUpcomingOrLive = true;
+
       const li = document.createElement('li');
-      li.textContent = "No races scheduled at this time.";
+      const localTime = raceTime.toLocaleString(undefined, options);
+      const displayNames = race.match.map(s => s.display).join(" vs ");
+
+      if (now >= raceTime) {
+        li.innerHTML = `<strong>${displayNames}:</strong> <span style="color: #0f0;">Race is live!</span> (started ${localTime})`;
+      } else {
+        li.innerHTML = `<strong>${displayNames}:</strong> ${localTime}`;
+      }
+
       raceList.appendChild(li);
-    } else {
-      races.forEach(race => {
-        const localTime = new Date(race.estTime).toLocaleString(undefined, options);
-        const li = document.createElement('li');
-        li.innerHTML = `<strong>${race.match}:</strong> ${localTime}`;
-        raceList.appendChild(li);
-      });
     }
+  });
+
+  if (!hasUpcomingOrLive) {
+    const li = document.createElement('li');
+    li.textContent = "No races scheduled at this time.";
+    raceList.appendChild(li);
+  }
+}
