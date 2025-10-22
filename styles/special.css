@@ -1,3 +1,82 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+}
+
+#coin {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    perspective: 1000px;
+    
+}
+
+
+@keyframes coinFlip {
+    0% {
+        transform: rotateY(0deg) scale(1);
+    }
+
+    60% {
+        transform: rotateY(1080deg) scale(1.05);
+    }
+
+    80% {
+        transform: rotateY(1260deg) scale(0.97);
+    }
+
+    100% {
+        transform: rotateY(1440deg) scale(1);
+    }
+}
+
+#coin img {
+    width: 100%;
+    height: 100%;
+    transition: none;
+    /* Disable regular transition */
+}
+
+#coin.flipping img {
+    animation: coinFlip 1.2s ease-in-out forwards;
+}
+
+@font-face {
+    font-family: customFont;
+    src: url(../fonts/SymphonyoftheNightfont.ttf);
+}
+
+#resultText {
+    margin-top: 10px;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-family: customFont, sans-serif;
+}
+
+#scheduled-races{
+    margin: 0 1em;
+    font-family: customFont, sans-serif;
+    h2{
+        font-size: 35px;
+    }
+    ul{
+        font-size: 20px;
+    }
+}
+
+
 #raceHeader {
       text-align: center;
       font-family: customFont, sans-serif;
@@ -37,3 +116,118 @@
       background-color: #222;
       font-size: 1.5em;
     }
+
+    /* Container for ban/pick area */
+#banArea {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 600px;
+  background-color: #f9f9fc;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Headings inside ban area */
+#banArea h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Buttons for bans and picks */
+#banArea button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #0078d4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#banArea button:hover {
+  background-color: #005fa3;
+}
+
+#banArea button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Winner selector block */
+#winnerSelector {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 500px;
+  background-color: #eef2f7;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#winnerSelector h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+#winnerSelector button {
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#winnerSelector button:hover {
+  background-color: #218838;
+}
+/* Ban button styles */
+#banLog {
+  margin: 1rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  border-top: 1px solid #ccc;
+  text-align: left;
+}
+
+.log-entry {
+  margin: 0.3rem 0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.log-first {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.log-second {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.log-final {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.log-winner {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
