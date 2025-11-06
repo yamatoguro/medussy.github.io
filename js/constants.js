@@ -8,9 +8,9 @@ window.races = [
   // },
   {
     match: [
-      { display: "Skr1mps", channel: "skr1mps" },
-      { display: "CRAZY4BLADES", channel: "crazy4bladestv" }
+      { display: "DerDrach", channel: "derdrach" },
+      { display: "Renantrl", channel: "renantrl1" }
     ],
-    estTime: "2025-11-05T18:00:00-05:00"
+    estTime: "2025-11-09T18:00:00-05:00"
   }
 ];
