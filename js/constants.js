@@ -9,8 +9,8 @@ window.races = [
   },{
     match: [
       { display: "Classic Advent", channel: "classicadvent" },
-      { display: "AlexP", channel: "alexpi_fgc" }
+      { display: "CRAZY4BLADES", channel: "crazy4bladestv" }
     ],
-    estTime: "2025-11-10T19:00:00-05:00"
+    estTime: "2025-11-16T19:00:00-05:00"
   }
 ];
