@@ -5,7 +5,7 @@ window.races = [
       { display: "DerDrach", channel: "derdrach" },
       { display: "Classic Advent", channel: "classicadvent" }
     ],
-    estTime: "2025-11-24T19:00:00-05:00"
+    estTime: "2025-11-26T19:00:00-05:00"
   }//,{
   //   match: [
   //     { display: "Renantrl", channel: "renantrl1" },
