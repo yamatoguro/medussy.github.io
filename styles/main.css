@@ -18,7 +18,7 @@ h1 {
     height: 100px;
     cursor: pointer;
     perspective: 1000px;
-    
+
 }
 
 /* May be used for a loading prank in the future */
@@ -70,13 +70,15 @@ body.waiting {
     font-family: customFont, sans-serif;
 }
 
-#scheduled-races{
+#scheduled-races {
     margin: 0 1em;
     font-family: customFont, sans-serif;
-    h2{
+
+    h2 {
         font-size: 35px;
     }
-    ul{
+
+    ul {
         font-size: 20px;
     }
 }
@@ -218,3 +220,90 @@ body.waiting {
     font-weight: 500;
     visibility: visible;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    background: #222;
+    border: 1px solid #555;
+    margin: auto;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background: #333;
+}
+
+tr:nth-child(even) {
+    background: #1a1a1a;
+}
+
+.gold {
+    color: gold;
+    font-weight: bold;
+}
+
+.silver {
+    color: silver;
+    font-weight: bold;
+}
+
+.bronze {
+    color: #cd7f32;
+    font-weight: bold;
+}
+.bracket {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #ccc;
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.5rem;
+    }
+
+    .match {
+      background: #222;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+    }
+
+    .match span {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .winner {
+      font-weight: bold;
+      color: lime;
+    }
+
+    .section iframe {
+      display: block;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 6px;
+    }
