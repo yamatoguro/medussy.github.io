@@ -25,6 +25,28 @@ function handleOffline() {
     document.getElementById("imageDB").classList.remove('hide')
     player.setMuted(true);
 }
+
+function extractYouTubeId(url) {
+    // Handles ALL YouTube formats
+    const regex = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([^#&?]+)/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+}
+
+function setYouTube(url) {
+    const id = extractYouTubeId(url);
+    if (!id) {
+        console.warn("Invalid YouTube URL:", url);
+        return;
+    }
+
+    document.getElementById("youtube").src =
+        "https://www.youtube.com/embed/" + id;
+}
+
+// Change this link when new videos are released:
+setYouTube("https://youtu.be/9sOZcIlr2DA");
+
 // Coin Flip function
 document.addEventListener('DOMContentLoaded', function () {
     const coin = document.getElementById('coin');
